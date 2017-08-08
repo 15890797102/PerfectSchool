@@ -20,7 +20,7 @@
                             <option>教务处</option>
                         </select>
                         <input type="text" placeholder="用户名" class="fl" name="">
-                        <div class="search fl"><img src="../images/search.png"></div>
+                        <div class="search fl"><img src="images/search.png"></div>
                     </div> 
                 </h3>
                 <div class="list" id="release_news">

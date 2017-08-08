@@ -1,27 +1,30 @@
 package com.starry.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.starry.entity.PageBean;
 import com.starry.entity.User;
 import com.starry.service.AccountService;
 
 /**
- * 点击登录后跳转的servlet
- * Servlet implementation class LoginServlet
+ * 跳转到小界面1
+ * Servlet implementation class Servlet1
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Servlet1")
+public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public Servlet1() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,34 +33,36 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name= request.getParameter("username");
-		String pass= request.getParameter("password");
-		String num= request.getParameter("number");
-		String code= request.getSession().getAttribute("codesave").toString();
+		//获取当前总页数
 		AccountService acs=new AccountService();
-		User user= acs.userService(name,pass);
-		if(user!=null) {
-			if(num.equals(code)) {					
-				if(user.getLevel()==0) {
-					System.out.println(user.getLevel());
-					request.getSession().setAttribute("level",0);
-				}else {
-					request.getSession().setAttribute("level",1);
-				}
-				request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
-				return;
-			}
-			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-			return;
-		}else {
-			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+	/*	List<PageBean> pageList=acs.pageList();
+		request.getSession().setAttribute("pageList", pageList);*/
+		
+		int pagemax=acs.pageList1();
+		request.getSession().setAttribute("pagemax", pagemax);
+		//获取当前页数
+		String num=(String) request.getParameter("hes");
+		//System.out.println(num);
+		if(num==null||num.equals("")) {
+			num="1";
 		}
+		int number=Integer.parseInt(num) ;
+		PageBean pb=new PageBean();
+		request.getSession().setAttribute("nowPage", number);
+		pb.setNowPage(number);
+				
+		List<User> userList=acs.userList(pb.getNowPage());
+		request.getSession().setAttribute("userList", userList);
+		
+		request.getRequestDispatcher("/WEB-INF/AccountManagement.jsp").forward(request, response);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

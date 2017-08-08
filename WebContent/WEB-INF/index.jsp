@@ -26,7 +26,7 @@
             <div class="user_location fl">当前： 首页-<span>账户管理</span>  </div>
         </div>
         <div class="nav_side text_center fl">
-            <div class="nav AccountManagement active">账户管理</div>
+            <div class="nav AccountManagement active" id="z1">账户管理</div>
             <div class="nav ColumnManagement">栏目管理</div>
             <div class="nav NewsManagement">新闻管理</div>
         </div>
@@ -35,22 +35,22 @@
         <div class="main_fx">
             
             <div class="AccountManagement_c_iframe">
-                <iframe src="AccountManagement.html"></iframe>
+                <iframe src="Servlet1"></iframe>
             </div>
-
         </div>
-        
-
-
-
     </div>
 
-    
-
-    
-
-</body>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		if(<%=request.getSession().getAttribute("level") %>==1){
+			document.getElementById("z1").style.display="none";
+			$("iframe").attr("src","Servlet2");
+		}
+	}
 
+
+</script>
+</body>
 </html>

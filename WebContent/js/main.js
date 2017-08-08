@@ -9,25 +9,17 @@ $(function(){
     
     // iframe  链接
     $(".AccountManagement").click(function(){
-        $(".AccountManagement_c_iframe iframe").attr("src","AccountManagement.jsp")
+        $(".AccountManagement_c_iframe iframe").attr("src","Servlet1")
     })
     $(".ColumnManagement").click(function(){
-        $(".AccountManagement_c_iframe iframe").attr("src","ColumnManagement.jsp")
+        $(".AccountManagement_c_iframe iframe").attr("src","Servlet2")
     })
     $(".NewsManagement").click(function(){
-        $(".AccountManagement_c_iframe iframe").attr("src","NewsManagement.jsp")
+        $(".AccountManagement_c_iframe iframe").attr("src","Servlet3")
     })
 
 
-	// pull page   翻页
-	$(".pull_page ul li").click(function(){
-		var index =$(this).index();
-		if( $(this).hasClass("pull_page_df_btn")){
-			return;
-		}
-		$(this).addClass("on").siblings().removeClass("on");
-
-	})
+	
 
 	// nav
 	$(".nav_side>div").click(function(){

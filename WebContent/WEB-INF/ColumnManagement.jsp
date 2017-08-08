@@ -13,7 +13,7 @@
                 <h3>栏目管理 
                     <div class="amcl fr">
                         <input type="text" placeholder="用户名" class="fl" name="">
-                        <div class="search fl"><img src="../images/search.png"></div>
+                        <div class="search fl"><img src="images/search.png"></div>
                     </div> 
                 </h3>
                 <div class="AM_ct text_center">

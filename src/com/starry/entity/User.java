@@ -5,7 +5,11 @@ package com.starry.entity;
  */
 public class User {
 	//成员变量
+	private int lo;
+
 	private int id;
+	private String jobName;
+
 	private String username;
 	private String password;
 	private int level;
@@ -25,6 +29,18 @@ public class User {
 		this.state_code = state_code;
 	}
 	//属性
+	public String getJobName() {
+		return jobName;
+	}
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+	public int getLo() {
+		return lo;
+	}
+	public void setLo(int lo) {
+		this.lo = lo;
+	}
 	public int getId() {
 		return id;
 	}
