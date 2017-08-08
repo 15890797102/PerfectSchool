@@ -5,7 +5,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link href="../css/main.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 			<div class="AccountManagement_c " id="AccountManagement_c">
@@ -189,6 +189,6 @@
     </div>
     
 </body>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>

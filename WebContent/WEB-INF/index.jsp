@@ -8,13 +8,13 @@
 <title>新闻发布管理平台</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="../css/main.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
     <div class="header">
         <div class="header_in">
-            <img src="../images/tit.png">
+            <img src="images/tit.png">
             <div class="quit text_center">安全退出</div>
         </div>
         
@@ -50,7 +50,7 @@
     
 
 </body>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </html>

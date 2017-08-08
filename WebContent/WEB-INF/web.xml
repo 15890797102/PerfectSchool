@@ -9,4 +9,17 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <filter>
+    <filter-name>InFilter</filter-name>
+    <filter-class>com.starry.servlet.InFilter</filter-class>
+    <init-param>
+      <description>给参数和值设置名称和编码类型</description>
+      <param-name>encode</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>InFilter</filter-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </filter-mapping>
 </web-app>

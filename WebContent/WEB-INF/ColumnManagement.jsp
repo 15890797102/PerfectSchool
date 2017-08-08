@@ -5,7 +5,7 @@
 <head>
     <title></title>
     <meta charset="utf-8">
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
     <!-- 栏目管理 -->
@@ -147,6 +147,6 @@
 
 
 </body>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>

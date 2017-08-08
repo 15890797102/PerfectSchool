@@ -5,7 +5,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 <!-- 新闻管理 -->
