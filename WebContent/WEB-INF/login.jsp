@@ -21,15 +21,18 @@
 			<div class="login">
                 <div class="login_in">
                     <div class="login_h">后台登陆</div>
+                    	<form action="LoginServlet" method="get">
                     <div class="user_login">
-                        <input type="text" placeholder="账号" id="s1">
-                        <input type="text" placeholder="密码" id="s2">
+                        <input type="text" placeholder="账号" name="username" >
+                        <input type="text" placeholder="密码" name="password" >
                     </div>
                     <div class="img_code">
-                        <input type="text" placeholder="验证码" name="verify" id="s3">  
+                        <input type="text" placeholder="验证码" name="verify">  
                         <img src="ImgServlet" alt="aa" onclick="genghuan(this)">
                     </div>
-                    <div class="login_btn" onclick="denglu()">登陆</div>
+                    	<input type="submit" class="login_btn" value="登录" name="verify"> 
+                    
+                    </form>
                 </div>
                 
             </div>
@@ -47,6 +50,8 @@
 			var psw=hex_md5(pass);
 		 	window.location.href="<%=request.getContextPath()%>/LoginServlet?username="+name+"&password="+psw+"&number="+num; 
 		}	
+		
+		
 		function genghuan(obj){
 			obj.src="ImgServlet?"+Math.Random;
 			

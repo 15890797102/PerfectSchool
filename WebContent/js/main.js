@@ -44,7 +44,7 @@ $(function(){
     $(".add_Account_close").click(function(){
         $("#add_Account").fadeOut(100);
         $("#user_column").fadeOut(100);
-        $("#delete_Account").fadeOut(100);
+      //  $("#delete_Account").fadeOut(100);
         $("#ac_Account").fadeOut(100);
         $("#add_column").fadeOut(100);
         $("#edit_column").fadeOut(100);
@@ -54,10 +54,7 @@ $(function(){
     $("#edit_Account_btn").click(function(){
         $("#user_column").fadeIn(100);
     })
-    //删除账户
-    $("#delete_Account_btn").click(function(){
-        $("#delete_Account").fadeIn(100);
-    })
+   
     // 编辑账户
     $("#ac_Account_btn").click(function(){
         $("#ac_Account").fadeIn(100);
@@ -81,9 +78,7 @@ $(function(){
     $("#add_Account_ok_btn").click(function(){
         $("#add_Account").fadeOut(100);
     })
-    $("#user_column_ok_btn").click(function(){
-        $("#user_column").fadeOut(100);
-    })
+   
     $("#delete_Account_ok_btn").click(function(){
         $("#delete_Account").fadeOut(100);
     })

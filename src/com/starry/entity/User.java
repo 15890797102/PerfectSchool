@@ -8,6 +8,8 @@ public class User {
 	private int lo;
 
 	private int id;
+	private int user_id;
+
 	private String jobName;
 
 	private String username;
@@ -28,7 +30,27 @@ public class User {
 		this.session = session;
 		this.state_code = state_code;
 	}
+	
+	public User(int lo, int id, int user_id, String jobName, String username, String password, int level,
+			String session, int state_code) {
+		super();
+		this.lo = lo;
+		this.id = id;
+		this.user_id = user_id;
+		this.jobName = jobName;
+		this.username = username;
+		this.password = password;
+		this.level = level;
+		this.session = session;
+		this.state_code = state_code;
+	}
 	//属性
+	public int getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
 	public String getJobName() {
 		return jobName;
 	}

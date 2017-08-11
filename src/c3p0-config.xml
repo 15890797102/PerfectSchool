@@ -12,7 +12,7 @@
 		<property name="acquireIncrement">3</property>
 		<property name="initialPoolSize">10</property>
 		<property name="minPoolSize">2</property>
-		<property name="maxPoolSize">10</property>
+		<property name="maxPoolSize">100</property>
 	</default-config>
 
 	<!-- 命名配置节点 -->
@@ -25,7 +25,7 @@
 		<property name="acquireIncrement">3</property>
 		<property name="initialPoolSize">10</property>
 		<property name="minPoolSize">2</property>
-		<property name="maxPoolSize">10</property>
+		<property name="maxPoolSize">100</property>
 	</named-config>
 
 </c3p0-config>

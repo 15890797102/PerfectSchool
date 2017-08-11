@@ -330,7 +330,6 @@ input,select{
 .list {
     margin-top: 20px;
     overflow: hidden;
-    height: 505px;
     border:1px solid #ddd;
     position: relative;
 }
@@ -357,20 +356,36 @@ input,select{
     margin-left: 10px;
 }
 
-.b20{
-    width: 20%;
+.b15{
+	width: 15%;
 }
-
+.b35{
+	width: 35%;
+}
+.b50{
+	width: 50%;
+}
 .b60{
     width: 60%;
 }
-
+.b65{
+    width: 65%;
+}
+.b20{
+    width: 20%;
+}
 .b80{
     width: 80%;
 }
+.b30{
+    width: 30%;
+}
+.b70{
+    width: 70%;
+}
 
 .list_b_c{
-    height: 400px;
+   /*  height: 400px; */
     /*overflow: hidden;*/
 }
 
@@ -398,8 +413,6 @@ input,select{
     height: 65px;
     overflow: hidden;
     color: #666;
-    position: absolute;
-    bottom: 0;
     width: 500px;
 }
 
@@ -714,7 +727,7 @@ input,select{
 }
 
 #release_news{
-    height: 560px;
+    height: 900px;
 }
 
 #release_news_in{

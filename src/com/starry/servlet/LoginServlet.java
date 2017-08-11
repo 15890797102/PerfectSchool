@@ -32,26 +32,34 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name= request.getParameter("username");
 		String pass= request.getParameter("password");
-		String num= request.getParameter("number");
-		String code= request.getSession().getAttribute("codesave").toString();
-		AccountService acs=new AccountService();
-		User user= acs.userService(name,pass);
-		if(user!=null) {
-			if(num.equals(code)) {					
-				if(user.getLevel()==0) {
-					System.out.println(user.getLevel());
-					request.getSession().setAttribute("level",0);
-				}else {
-					request.getSession().setAttribute("level",1);
+		String num= request.getParameter("verify");
+		request.getSession().setAttribute("name", name);
+		
+		String code= (String) request.getSession().getAttribute("codesave");
+			AccountService acs=new AccountService();
+			User user= acs.userService(name,pass);
+			
+			if(user!=null) {
+				if(code!=null) {
+				if(num.equals(code)) {					
+					if(user.getLevel()==0) {
+						System.out.println(user.getLevel());
+						request.getSession().setAttribute("level",0);
+					}else {
+						request.getSession().setAttribute("level",1);
+					}
+					request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+					return;
 				}
-				request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 				return;
+			}else {
+				request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 			}
-			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-			return;
 		}else {
 			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}
+		
 	}
 
 	/**

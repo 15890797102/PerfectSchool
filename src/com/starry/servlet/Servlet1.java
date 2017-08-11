@@ -28,13 +28,51 @@ public class Servlet1 extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//获取当前总页数
+		
 		AccountService acs=new AccountService();
+		//添加功能
+		String insertName=request.getParameter("insertName");
+		String insertPass=request.getParameter("insertPass");
+		if(insertName!=null&&insertPass!=null) {
+			acs.insertUser(insertName, insertPass);
+		}
+		//删除功能
+		String deleteName=request.getParameter("deleteName");
+		if(deleteName!=null) {
+			System.out.println("开始执行删除方法");
+			acs.deleteUser(deleteName);
+
+		}
+		
+		//添加权限功能
+		
+		request.getSession().setAttribute("depart", acs.selectDepart());
+
+		String userName=request.getParameter("userId");//获取查询当前需要添加权限的用户的名字
+		String departName=request.getParameter("departId");//获取查询当前权限的名字
+		if(userName!=null&&departName!=null) {
+			System.out.println("userName=="+userName);
+			System.out.println("departName=="+departName);
+			int userId=acs.SelectUserId(userName);
+			int departId=acs.SelectDepartId(departName);
+			acs.insertManage(userId, departId);
+		}
+		//更新功能
+		String updateName1=request.getParameter("updateName1");
+		String updatePass1=request.getParameter("updatePass1");
+		String updateName=request.getParameter("updateName");
+		String updatePass=request.getParameter("updatePass");
+		if(updateName1!=null&&updatePass1!=null&&updateName!=null&&updatePass!=null) {
+			acs.updateUser(updateName1, updatePass1, updateName, updatePass);
+		}
+		//获取当前总页数
+	
 	/*	List<PageBean> pageList=acs.pageList();
 		request.getSession().setAttribute("pageList", pageList);*/
 		

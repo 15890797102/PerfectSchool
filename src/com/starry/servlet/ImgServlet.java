@@ -64,8 +64,8 @@ public class ImgServlet extends HttpServlet {
 			            graphics.drawString(code.substring(index, index+1), width/6*(i+1), height-4);
 			        }
 			        //写到浏览器  
-			
-			        request.getSession().setAttribute("codesave", codesave);
+			 String codes=codesave.toString();
+			        request.getSession().setAttribute("codesave", codes);
 			        ImageIO.write(img, "jpg", response.getOutputStream());
 
 		

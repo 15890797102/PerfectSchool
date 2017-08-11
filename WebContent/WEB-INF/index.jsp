@@ -15,7 +15,7 @@
     <div class="header">
         <div class="header_in">
             <img src="images/tit.png">
-            <div class="quit text_center">安全退出</div>
+            <div class="quit text_center" onclick="goby()">安全退出</div>
         </div>
         
     </div>
@@ -49,8 +49,10 @@
 			$("iframe").attr("src","Servlet2");
 		}
 	}
-
-
+	
+	function goby(){
+		 window.location.href="IndexServlet"; 
+	}
 </script>
 </body>
 </html>
