@@ -13,6 +13,5 @@ public class Test {
 		ud.userLevel("starry2", "6512bd43d9caa6e02c990b0a82652dca");
 		ud.userLevel("starry3", "6512bd43d9caa6e02c990b0a82652dca");
 		ud.userLevel("starry4", "6512bd43d9caa6e02c990b0a82652dca");
-
 	}
 }
